@@ -3,7 +3,7 @@ main core
 
 ![zank framework](https://raw.githubusercontent.com/zank-framework/zank/master/zank.png)
 
-<div style="direction:rtl">
+<div dir="rtl">
  طرح قصه
  
 قصه فرم ورک وبی که اسمش ضنک هست را در زیر شرح می دهم باشد که این نوشته چراغ راهی برای شناسایی بهتر ضنک باشد.
