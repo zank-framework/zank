@@ -12,6 +12,7 @@ import ir.zank.core.html.htmlwriter;
 import ir.zank.core.html.template;
 import ir.zank.core.html.template2;
 import ir.zank.core.html.template3;
+import ir.zank.core.html.template4;
 import ir.zank.core.util.io;
 
 /**
@@ -78,12 +79,27 @@ public class main {
         return finalstr;
                     
     }
+    public String start_header_mini(){
+        dbreader dbr=new dbreader();
+        htmlwriter hw=new htmlwriter();
+        template4 t=new template4();
+        String finalstr="";
+        for(category c:dbr.allcateg("0"))
+        {
+            finalstr+=hw.write(t.temp, new String[]{"idcategory","name"}
+                    , new String[]{c.getIdcategory(),c.getName()});
+        }
+        io i=new io();
+        i.savetocsv(finalstr, "/home/mghasemy/finalsrc4.txt");
+        return finalstr;
+                    
+    }
     public static void main(String a[]){
         System.out.println("Starting.....\n\n\n");
         main m=new main();
 //        m.start();
 //        m.start_sidebar();
-        m.start_city();
+        m.start_header_mini();
         System.exit(0);
 //        System.out.println(m.start());
     }
